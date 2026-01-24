@@ -1,25 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
-    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.5"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+
+  <!-- Banner Background (Transparent) -->
+  <rect width="800" height="250" fill="none"/>
   
-  <!-- Minimalist Background -->
-  <rect width="800" height="200" rx="12" fill="#0d1117" opacity="0.0" />
-  
-  <g transform="translate(400, 100)">
-    <!-- Enclosing Circle -->
-    <circle cx="0" cy="0" r="50" fill="none" stroke="url(#gold)" stroke-width="2" />
+  <!-- Centered Symbol derived from user's favicon.svg -->
+  <g transform="translate(400, 100)" filter="url(#shadow)">
+     <!-- Circle: cx="50" cy="50" r="40" -> scaled and centered -->
+    <circle cx="0" cy="0" r="60" stroke="#D4AF37" stroke-width="6" fill="#0d1117"/>
     
-    <!-- Air Alchemy Symbol (Upward Triangle with Line) -->
-    <!-- Triangle -->
-    <polygon points="0,-40 35,20 -35,20" fill="none" stroke="#fff" stroke-width="2" />
-    <!-- Horizontal Line -->
-    <line x1="-35" y1="-8" x2="35" y2="-8" stroke="#fff" stroke-width="2" />
+    <!-- Triangle: points="50,18 82,75 18,75" -> scaled and centered around (0,0) -->
+    <!-- Original w:64 h:57. Centered approx: (0,-28.5) to (32, 28.5) -->
+    <!-- Mapped roughly to scale 1.5x of original relative to circle -->
+    <polygon points="0,-45 48,35 -48,35" stroke="#D4AF37" stroke-width="6" fill="none"/>
+    
+    <!-- Line: x1="18" y1="38" x2="82" y2="38" -> scaled -->
+    <line x1="-48" y1="-15" x2="48" y2="-15" stroke="#D4AF37" stroke-width="6"/>
   </g>
   
-  <!-- Minimal Text -->
-  <text x="400" y="180" font-family="-apple-system, sans-serif" font-size="12" fill="#666" text-anchor="middle" letter-spacing="4">DIGITAL ALCHEMIST</text>
+  <!-- Text -->
+  <text x="400" y="220" font-family="-apple-system, sans-serif" font-size="16" fill="#D4AF37" text-anchor="middle" letter-spacing="8" font-weight="600">DIGITAL ALCHEMIST</text>
 </svg>
