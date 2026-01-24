@@ -1,33 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#9333EA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4ADE80;stop-opacity:1" />
+    <!-- Gradients -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="magicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9333EA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4ADE80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filters -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    
+    <!-- Animations -->
+    <style>
+      @keyframes spin { 
+        100% { transform: rotate(360deg); } 
+      }
+      @keyframes spin-reverse { 
+        100% { transform: rotate(-360deg); } 
+      }
+      @keyframes pulse {
+        0% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+        100% { opacity: 0.6; transform: scale(1); }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .circle-outer { animation: spin 20s linear infinite; transform-origin: center; }
+      .circle-inner { animation: spin-reverse 15s linear infinite; transform-origin: center; }
+      .core-symbol { animation: pulse 3s ease-in-out infinite; transform-origin: center; }
+      .floating-text { animation: float 6s ease-in-out infinite; }
+    </style>
   </defs>
   
   <rect width="800" height="400" rx="20" fill="#0d1117" />
   
-  <!-- Alchemy Symbol: Squared Circle (Philosopher's Stone) -->
-  <g transform="translate(400, 160)" filter="url(#glow)">
-    <!-- Circle -->
-    <circle cx="0" cy="0" r="60" fill="none" stroke="url(#grad1)" stroke-width="4" />
-    <!-- Triangle -->
-    <polygon points="0,-60 52,30 -52,30" fill="none" stroke="url(#grad1)" stroke-width="4" />
-    <!-- Square -->
-    <rect x="-35" y="-35" width="70" height="70" fill="none" stroke="url(#grad1)" stroke-width="4" transform="rotate(45)" />
-    <!-- Center Dot -->
-    <circle cx="0" cy="0" r="4" fill="#fff" />
+  <!-- Alchemy Circle Group -->
+  <g transform="translate(400, 180)" filter="url(#glow)">
+    
+    <!-- Outer Ring -->
+    <g class="circle-outer">
+      <circle cx="0" cy="0" r="120" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-dasharray="10 5" opacity="0.5"/>
+      <circle cx="0" cy="0" r="110" fill="none" stroke="url(#magicGradient)" stroke-width="1"/>
+      <!-- Runes on outer ring (Simulated) -->
+      <path d="M-120,0 L120,0 M0,-120 L0,120 M-85,-85 L85,85 M-85,85 L85,-85" stroke="url(#goldGradient)" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <!-- Inner Ring -->
+    <g class="circle-inner">
+      <rect x="-70" y="-70" width="140" height="140" fill="none" stroke="url(#magicGradient)" stroke-width="2" transform="rotate(45)" opacity="0.8"/>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="url(#goldGradient)" stroke-width="1"/>
+      <polygon points="0,-80 69,40 -69,40" fill="none" stroke="url(#magicGradient)" stroke-width="2"/>
+      <polygon points="0,80 69,-40 -69,-40" fill="none" stroke="url(#magicGradient)" stroke-width="2"/>
+    </g>
+    
+    <!-- Core Symbol (Philosopher's Stone Concept) -->
+    <g class="core-symbol">
+      <circle cx="0" cy="0" r="20" fill="url(#goldGradient)" opacity="0.8"/>
+      <circle cx="0" cy="0" r="15" fill="#fff" opacity="0.4"/>
+    </g>
+    
   </g>
   
   <!-- Text -->
-  <text x="400" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="300" fill="#fff" text-anchor="middle" letter-spacing="4">DIGITAL ALCHEMIST</text>
-  <text x="400" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle" letter-spacing="1">TRANSMUTING CODE INTO GOLD</text>
+  <g class="floating-text">
+    <text x="400" y="340" font-family="Courier New, monospace" font-size="28" font-weight="bold" fill="url(#goldGradient)" text-anchor="middle" letter-spacing="6" filter="url(#glow)">DIGITAL ALCHEMIST</text>
+    <text x="400" y="370" font-family="-apple-system, sans-serif" font-size="12" fill="#888" text-anchor="middle" letter-spacing="2">TRANSMUTING IDeaS INTO REALITY</text>
+  </g>
+  
+  <!-- Decorative Particles -->
+  <circle cx="50" cy="50" r="2" fill="#4ADE80" opacity="0.5"/>
+  <circle cx="750" cy="350" r="2" fill="#9333EA" opacity="0.5"/>
+  <circle cx="700" cy="50" r="3" fill="#FFD700" opacity="0.3"/>
+  <circle cx="100" cy="300" r="2" fill="#3B82F6" opacity="0.4"/>
+
 </svg>
