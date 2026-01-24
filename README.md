@@ -22,26 +22,14 @@
 
 <br><br>
 
-<!-- Projects Table -->
+<!-- Digital Alchemist Section -->
 <table>
   <tr>
-    <td align="center" width="300">
+    <td align="center" width="600">
       <br>
-      <h3>🌙 DreamTabir</h3>
-      <p>AI-powered dream interpretation</p>
-      <a href="https://github.com/oplta/dream-tabir">
-        <img src="https://img.shields.io/badge/View_Project-Arrow-black?style=flat-square"/>
-      </a>
-      <br><br>
-    </td>
-    <td align="center" width="300">
+      <h1>⚗️ Digital Alchemist</h1>
+      <p><i>Transmuting code into gold standards.</i></p>
       <br>
-      <h3>🎨 BlushCat</h3>
-      <p>Creative digital agency</p>
-      <a href="https://blushcat.com">
-        <img src="https://img.shields.io/badge/Visit_Site-Arrow-black?style=flat-square"/>
-      </a>
-      <br><br>
     </td>
   </tr>
 </table>
