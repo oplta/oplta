@@ -2,7 +2,7 @@
   
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2pmMzY0ZnE1d2xpM3ZhZ2xpZ2xpZ2xpZ2xpZ2xpZ2xpZ2xpZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L3v3x9e9g905000000/giphy.gif" width="100" />
 
-  <h1 align="center">Hi there, I'm oplta! <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28px"></h1>
+  <h1 align="center">Welcome to my profile! I'm oplta <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28px"></h1>
   
   <h3 align="center">Building digital experiences with passion & precision.</h3>
 
