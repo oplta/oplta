@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/oplta/oplta/main/alchemy.svg" width="100%">
 
-<br><br>
+<br>
 
 <!-- Clean Stats (No Backgrounds) -->
 <a href="https://github.com/oplta">
