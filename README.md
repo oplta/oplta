@@ -15,7 +15,7 @@
 
 <!-- Thematic Quote -->
 <p style="font-family: monospace; font-style: italic; color: #888; font-size: 14px;">
-"Transmuting abstract ideas into digital gold."
+"Ben yaratırım ve siz oyalanırsınız."
 </p>
 
 <br><br>
